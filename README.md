@@ -4,8 +4,8 @@
 
 ⚠️ `$PATH` and `$REPOS` need to be populated inside the code
 
-`$PATH` : define your path (the script work only inside this path and recursevly)
-`$REPOS` : define which GitHub you need to clone for download documentations
+`$PATH` : define your path (the script work only inside this path and recursevly)  
+`$REPOS` : define which GitHub you need to clone for download documentations  
 `$ALLOWED_EXT` : this shouldnt be changed, but if need remove a format that you dont want big-rag to read...
 
 ---
