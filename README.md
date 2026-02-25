@@ -13,5 +13,4 @@ You need to populate the .toml file to make the script work:
 + `[filter.exclude]` : folder names and file extensions to discard
 
 **Known Issues:**
-+ problem specific to the # in the value in `.toml` file, because the parser strips everything after `#` as an inline comment.  
-esample: `"C# language spec"` becomes `"C after the parse."`, only notes containing `#` should be single quoted: `tomlnote = 'C# language spec'`
++ in TOML file, problem specific to `#` in value, because the parser strips everything after `#` as an inline comment. **esample:** `"C# language spec"` becomes `"C after the parse."`, only notes containing `#` should be single quoted: `tomlnote = 'C# language spec'`
