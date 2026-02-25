@@ -1,0 +1,59 @@
+# ============================================
+# RAG Documentation Downloader - Configuration
+# ============================================
+
+[paths]
+base = " "
+
+# --------------------------------------------
+
+[[repos]]
+url  = " "
+note = " "
+
+# --------------------------------------------
+
+[filter.include]
+# Only folders matching these patterns will be kept (case-insensitive)
+folders = [
+    "docs",
+    "documentation",
+    "guide",
+    "guides",
+    "api",
+    "reference"
+]
+
+[filter.exclude]
+# Folders matching these patterns will be skipped entirely (case-insensitive)
+folders = [
+    "samples",
+    "examples",
+    "tests",
+    "test",
+    "benchmark",
+    "benchmarks",
+    "obj",
+    "bin",
+    "build",
+    "assets",
+    "images",
+    "media",
+    "img",
+    "icons",
+    "fonts"
+]
+
+# Allowed file extensions
+extensions = [
+    ".md",
+    ".markdown",
+    ".mdx",
+    ".txt",
+    ".toml",
+    ".json",
+    ".yaml",
+    ".yml",
+    ".html",
+    ".htm"
+]
