@@ -1,6 +1,8 @@
 # MISCELLANEA OF PS scripts (almost all AI Generated, why... why not? -_-)
 
-+ `rag-docs-downloader.ps1` ─ A technical documentation scraper for the [big-rag](https://lmstudio.ai/mindstudio/big-rag) plugin in LM Studio that incrementally downloads — via sparse-checkout and partial clone — only the files readable by the plugin from a set of curated GitHub repositories, keeping them up-to-date and confined to a dedicated local location.
+## `rag-docs-downloader.ps1`
+
+A technical documentation scraper for the [big-rag](https://lmstudio.ai/mindstudio/big-rag) plugin in LM Studio that incrementally downloads — via sparse-checkout and partial clone — only the files readable by the plugin from a set of curated GitHub repositories, keeping them up-to-date and confined to a dedicated local location.
 
 ⚠️ Configuration is defined in `rag-docs.toml` (must be in the same folder as the script)
 
@@ -9,3 +11,7 @@ You need to populate the .toml file to make the script work:
 + `[[repos]]` : define which GitHub repositories to clone for documentation
 + `[filter.include]` : whitelist of folder names to keep (e.g. `docs`, `api`, `guide`)
 + `[filter.exclude]` : folder names and file extensions to discard
+
+**Known Issues:**
++ problem specific to the # in the value in `.toml` file, because the parser strips everything after `#` as an inline comment.  
+esample: `"C# language spec"` becomes `"C after the parse."`, only notes containing `#` should be single quoted: `tomlnote = 'C# language spec'`
