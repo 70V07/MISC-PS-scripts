@@ -1,11 +1,11 @@
 # MISCELLANEA OF PS scripts (almost all AI Generated, why... why not? -_-)
 
-+ `big-rag_docu.ps1` ─ A technical documentation scraper for the [big-rag](https://lmstudio.ai/mindstudio/big-rag) plugin in LM Studio that incrementally downloads — via sparse-checkout and partial clone — only the files readable by the plugin from a set of curated GitHub repositories, keeping them up-to-date and confined to a dedicated local location.
++ `rag-docs-downloader.ps1` ─ A technical documentation scraper for the [big-rag](https://lmstudio.ai/mindstudio/big-rag) plugin in LM Studio that incrementally downloads — via sparse-checkout and partial clone — only the files readable by the plugin from a set of curated GitHub repositories, keeping them up-to-date and confined to a dedicated local location.
 
-⚠️ `$PATH` and `$REPOS` need to be populated inside the code
+⚠️ Configuration is defined in `rag-docs.toml` (must be in the same folder as the script)
 
-`$PATH` : define your path (the script work only inside this path and recursevly)  
-`$REPOS` : define which GitHub you need to clone for download documentations  
-`$ALLOWED_EXT` : this shouldnt be changed, but if need remove a format that you dont want big-rag to read...
-
----
+You need to populate the .toml file to make the script work:
++ `[paths].base` : define your path **(the script works only inside this path and recursively)**
++ `[[repos]]` : define which GitHub repositories to clone for documentation
++ `[filter.include]` : whitelist of folder names to keep (e.g. `docs`, `api`, `guide`)
++ `[filter.exclude]` : folder names and file extensions to discard
